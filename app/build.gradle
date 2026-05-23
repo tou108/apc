@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.mhxx.gansimu'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.mhxx.gansimu"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "0.9"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // assets フォルダの文字コードはUTF-8
+    aaptOptions {
+        noCompress 'csv', 'txt', 'jar', 'bat'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.webkit:webkit:1.10.0'
+}
